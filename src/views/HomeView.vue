@@ -1,7 +1,8 @@
 <template>
 
 <div class="postbox">
-   <h2>Our News</h2>
+   <h2> <strong> News Feed </strong>  </h2>
+   <br>
     <PostItems v-for="post of posts" :post="post" :key="post.url" />
               </div>
  

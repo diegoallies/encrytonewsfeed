@@ -5,22 +5,27 @@
             <div class="registration-right">
                
                 <div class="event-list">
-                    <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150C/O https://placeholder.com/" />
-                        <div class="card-body">
+                    <div class="card flex-row"><img class="card-img-left img-fluid" :src="post.urlToImage" />
+                        <div class="card-body card-padding-right-left-remover">
                           
 
-                            <div class="container">
+                            <div class="container card-padding-right-left-remover">
                                 <div class="row">
-                                  <div class="col-3">
+                                  <div class="col-2">
                                     <!-- {{ post.author }} -->
                                   </div>
-                                    <div class="col-7">
-                                    2 of 3 (wider)
+                                    <div class="col-8">
+                                   <strong> {{ post.title }} </strong>  
                                   </div>
-                                  <div class="col-2">
+                                  <div class="col-2 card-padding-right-left-remover">
                                   <h4 class="card-title h5 h4-sm pushright"><i class="fas fa-caret-right" aria-hidden="true"></i><span>{{post.publishedAt.substring(0,10)}}</span></h4>
                                   </div>
                                 </div>
+                              </div>
+                              <br>
+                              <div class="container">
+                                {{ post.description }}
+
                               </div>
                         </div>
                     </div>
@@ -41,9 +46,13 @@ export default {
 </script>
 
 <style scoped>
+.card-padding-right-left-remover{
+padding-right: 0 !important;
+padding-left: 0 !important
+}
 
 .pushright{
-  right: 1% !important;
+  right: 1% !important
 }
 .right-bck {
     background-color: #F1f9ec
@@ -81,7 +90,7 @@ export default {
     background-color: #ffffff;
     padding: 18px;
     margin-bottom: 3px;
-box-shadow: 1px 3px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.43);
 }
 
 .event-list img {
