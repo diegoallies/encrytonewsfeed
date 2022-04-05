@@ -1,18 +1,50 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+
+<div class="postbox">
+   <h2>Our News</h2>
+    <PostItems v-for="post of posts" :post="post" :key="post.url" />
+              </div>
+ 
+  
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import PostItems from "../components/PostItems.vue"
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+
+  components: { PostItems },
+
+  data() {
+    return {
+  posts: [],
+    };
+  },
+
+  mounted() {
+    fetch("http://localhost:3000")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        this.posts = data.data.articles
+      });
+  },
 }
+
 </script>
+
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
