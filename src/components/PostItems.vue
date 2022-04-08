@@ -11,10 +11,9 @@
 
                             <div class="container card-padding-right-left-remover">
                                 <div class="row">
-                                  <div class="col-2">
-                                    <!-- {{ post.author }} -->
+                                  <div class="col-6">
                                   </div>
-                                    <div class="col-8">
+                                    <div class="col-6">
                                    <strong> {{ post.title }} </strong>  
                                   </div>
                                   <div class="col-2 card-padding-right-left-remover">
