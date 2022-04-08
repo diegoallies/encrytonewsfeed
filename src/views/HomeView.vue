@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style scoped>
+.postbox {
+  margin-top: 1.5%;
+}
 h3 {
   margin: 40px 0 0;
 }
